@@ -44,7 +44,7 @@ This is a simple contacts API built with Python.
     ```sh
     python server.py
     ```
-2. The API will be available at `http://127.0.0.1:5000/`.
+2. The API will be available at `http://127.0.0.1:5000/`
 
 ## Endpoints
 
