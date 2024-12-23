@@ -56,7 +56,17 @@ def update_contact(id):
             )
             return contact
 
-    return {"error": "That contact does not exist!"}
+    return {"error": "That contact does not exist!"}, 404
+
+
+@app.delete("/contacts/<id>")
+def delete_contact(id):
+    contact = next((c for c in contacts if c["id"] == id), None)
+    if contact:
+        contacts.remove(contact)
+        return contact, 200
+
+    return {"error": "That contact does not exist!"}, 404
 
 
 if __name__ == "__main__":
