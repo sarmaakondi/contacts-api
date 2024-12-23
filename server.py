@@ -14,14 +14,14 @@ next_id = 5
 
 @app.get("/contacts")
 def list_contacts():
-    return contacts
+    return contacts, 200
 
 
 @app.get("/contacts/<id>")
 def read_single_contact(id):
     contact = next((c for c in contacts if c["id"] == id), None)
     if contact:
-        return contact
+        return contact, 200
 
     return {"error": "That contact does not exist!"}, 404
 
@@ -54,7 +54,7 @@ def update_contact(id):
                     "phone": request.json.get("phone", contact["phone"]),
                 }
             )
-            return contact
+            return contact, 200
 
     return {"error": "That contact does not exist!"}, 404
 
