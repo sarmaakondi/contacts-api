@@ -64,4 +64,4 @@ curl -X POST http://127.0.0.1:5000/contacts -H "Content-Type: application/json" 
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](LICENSE).
